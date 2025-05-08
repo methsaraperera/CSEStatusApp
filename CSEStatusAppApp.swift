@@ -126,7 +126,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                            let status = json["status"] as? String {
                             marketStatus = status
                             
-                            if marketStatus.lowercased().contains("open") {
+                            if marketStatus.lowercased().contains("open") ||
+                                marketStatus.lowercased().contains("regular trading"){
                                 statusColor = self.colorOpen
                             } else if marketStatus.lowercased().contains("closed") {
                                 statusColor = self.colorClosed
